@@ -105,28 +105,6 @@ locationNotice
 
 const shareTitle = "BEAUTY STYLIST — Peluquería & Barbería Unisex";
 const shareDescription = "Peluquería y barbería unisex. Cortes, color, tratamientos y productos para cuidar tu estilo.";
-const canonicalBaseUrl = (() => {
-  const origin = window.location.origin;
-  return origin && origin !== "null" ? origin : "https://example.com";
-})();
-
-const canonicalLink = document.querySelector('link[rel="canonical"]');
-const shareUrl = `${canonicalBaseUrl}/`;
-
-[
-  ["og:url", "property", shareUrl],
-  ["og:image", "property", `${canonicalBaseUrl}/assets/beauty-stylist-logo-current.jpg`],
-  ["twitter:image", "name", `${canonicalBaseUrl}/assets/beauty-stylist-logo-current.jpg`],
-].forEach(([propertyName, selectorType, content]) => {
-  const selector = selectorType === "name"
-    ? `meta[name="${propertyName}"]`
-    : `meta[property="${propertyName}"]`;
-  const tag = document.querySelector(selector);
-  if (tag) tag.setAttribute("content", content);
-});
-
-if (canonicalLink) canonicalLink.setAttribute("href", shareUrl);
-
 const shareButton = document.querySelector("#share-button");
 let shareFeedbackTimer = null;
 
@@ -146,9 +124,7 @@ function setShareFeedback(message) {
 }
 
 async function sharePage() {
-  const urlToShare = window.location.href && !window.location.href.startsWith("file:")
-    ? window.location.href
-    : shareUrl;
+  const urlToShare = window.location.href;
 
   const shareData = {
     title: shareTitle,
