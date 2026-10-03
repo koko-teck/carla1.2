@@ -103,6 +103,85 @@ locationNotice
     locationNotice.hidden = true;
   });
 
+const shareTitle = "BEAUTY STYLIST — Peluquería & Barbería Unisex";
+const shareDescription = "Peluquería y barbería unisex. Cortes, color, tratamientos y productos para cuidar tu estilo.";
+const canonicalBaseUrl = (() => {
+  const origin = window.location.origin;
+  return origin && origin !== "null" ? origin : "https://example.com";
+})();
+
+const canonicalLink = document.querySelector('link[rel="canonical"]');
+const shareUrl = `${canonicalBaseUrl}/`;
+
+[
+  ["og:url", "property", shareUrl],
+  ["og:image", "property", `${canonicalBaseUrl}/assets/beauty-stylist-logo-current.jpg`],
+  ["twitter:image", "name", `${canonicalBaseUrl}/assets/beauty-stylist-logo-current.jpg`],
+].forEach(([propertyName, selectorType, content]) => {
+  const selector = selectorType === "name"
+    ? `meta[name="${propertyName}"]`
+    : `meta[property="${propertyName}"]`;
+  const tag = document.querySelector(selector);
+  if (tag) tag.setAttribute("content", content);
+});
+
+if (canonicalLink) canonicalLink.setAttribute("href", shareUrl);
+
+const shareButton = document.querySelector("#share-button");
+let shareFeedbackTimer = null;
+
+function setShareFeedback(message) {
+  const currentText = shareButton.querySelector("span");
+  const previousText = currentText.textContent;
+  currentText.textContent = message;
+  shareButton.setAttribute("aria-label", message);
+  shareButton.title = message;
+
+  clearTimeout(shareFeedbackTimer);
+  shareFeedbackTimer = window.setTimeout(() => {
+    currentText.textContent = previousText;
+    shareButton.setAttribute("aria-label", "Compartir BEAUTY STYLIST");
+    shareButton.title = "Compartir esta web";
+  }, 1800);
+}
+
+async function sharePage() {
+  const urlToShare = window.location.href && !window.location.href.startsWith("file:")
+    ? window.location.href
+    : shareUrl;
+
+  const shareData = {
+    title: shareTitle,
+    text: shareDescription,
+    url: urlToShare,
+  };
+
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+      setShareFeedback("Compartido");
+      return;
+    }
+    throw new Error("Web Share API no disponible");
+  } catch (error) {
+    try {
+      await navigator.clipboard.writeText(urlToShare);
+      setShareFeedback("Enlace copiado");
+      return;
+    } catch (clipboardError) {
+      const tempInput = document.createElement("textarea");
+      tempInput.value = urlToShare;
+      document.body.append(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      tempInput.remove();
+      setShareFeedback("Enlace copiado");
+    }
+  }
+}
+
+if (shareButton) shareButton.addEventListener("click", sharePage);
+
 const presentationVideo = document.querySelector("#presentation-video");
 const videoToggle = document.querySelector(".video-toggle");
 

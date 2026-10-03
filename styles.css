@@ -987,6 +987,41 @@ h2 {
   font-weight: 600;
 }
 
+.floating-share-button {
+  position: fixed;
+  z-index: 20;
+  left: 22px;
+  bottom: max(22px, env(safe-area-inset-bottom));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 49px;
+  padding: 0 16px;
+  border: 1px solid rgba(242, 217, 177, 0.7);
+  border-radius: 999px;
+  background: rgba(36, 19, 31, 0.9);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  color: var(--cream);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.floating-share-button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.floating-share-button svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
 .floating-social {
   position: fixed;
   z-index: 20;
@@ -1538,6 +1573,14 @@ h2 {
   .back-top {
     grid-column: 2;
     justify-self: end;
+  }
+
+  .floating-share-button {
+    left: 12px;
+    bottom: max(63px, calc(env(safe-area-inset-bottom) + 62px));
+    min-height: 42px;
+    padding: 0 12px;
+    font-size: 9px;
   }
 
   .floating-social {
