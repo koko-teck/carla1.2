@@ -96,5 +96,48 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") setMenuOpen(false);
 });
 
+const locationNotice = document.querySelector("#location-notice");
+locationNotice
+  .querySelector(".location-notice-close")
+  .addEventListener("click", () => {
+    locationNotice.hidden = true;
+  });
+
+const presentationVideo = document.querySelector("#presentation-video");
+const videoToggle = document.querySelector(".video-toggle");
+
+function updateVideoToggle(isPlaying) {
+  videoToggle.textContent = isPlaying ? "Pausar video" : "Reproducir video";
+  videoToggle.setAttribute(
+    "aria-label",
+    `${isPlaying ? "Pausar" : "Reproducir"} video de presentación`,
+  );
+  videoToggle.setAttribute("aria-pressed", String(isPlaying));
+}
+
+presentationVideo.addEventListener("play", () => updateVideoToggle(true));
+presentationVideo.addEventListener("pause", () => updateVideoToggle(false));
+presentationVideo.addEventListener("volumechange", () => {
+  if (!presentationVideo.muted) presentationVideo.muted = true;
+});
+presentationVideo.addEventListener("error", () => {
+  document.querySelector("#video-fallback").hidden = false;
+  videoToggle.hidden = true;
+});
+
+videoToggle.addEventListener("click", () => {
+  if (presentationVideo.paused) {
+    presentationVideo.muted = true;
+    presentationVideo.play().catch(() => updateVideoToggle(false));
+  } else {
+    presentationVideo.pause();
+  }
+});
+
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  presentationVideo.muted = true;
+  presentationVideo.play().catch(() => updateVideoToggle(false));
+}
+
 document.querySelector("#current-year").textContent = new Date().getFullYear();
 updateSearch();
