@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="BEAUTY STYLIST: peluquería y barbería unisex. Cortes, color, tratamientos y productos para cuidar tu estilo. Consultanos por WhatsApp."
+    />
+    <meta name="theme-color" content="#24131f" />
+    <meta name="whatsapp-number" content="549223620968" />
+    <meta property="og:title" content="BEAUTY STYLIST — Peluquería & Barbería Unisex" />
+    <meta property="og:description" content="Peluquería y barbería unisex. Cortes, color, tratamientos y productos para cuidar tu estilo." />
+    <title>BEAUTY STYLIST — Peluquería & Barbería Unisex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="BEAUTY STYLIST, inicio">
+          <img
+            class="brand-logo"
+            src="assets/beauty-stylist-logo-current.jpg"
+            alt="BEAUTY STYLIST — Peluquería y barbería unisex"
+            fetchpriority="high"
+          />
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span></span><span></span>
+        </button>
+        <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+          <a href="#servicios">Servicios</a>
+          <a href="#resultados">Transformaciones</a>
+          <a href="#productos">Productos</a>
+          <a href="#contacto">Contacto</a>
+          <a
+            class="nav-cta"
+            data-whatsapp
+            data-message="Hola, quisiera hacer una consulta en BEAUTY STYLIST."
+            href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20hacer%20una%20consulta%20en%20BEAUTY%20STYLIST."
+          >Hablemos <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <section class="hero" id="inicio">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow"><span></span> UN ESPACIO PARA VOS</p>
+            <h1>Tu estilo,<br /><em>en buenas manos.</em></h1>
+            <p class="hero-intro">
+              Peluquería y barbería unisex, con atención cercana y dedicación en cada detalle.
+              Vení a renovar tu look o a encontrar tus nuevos esenciales.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button button-gold"
+                data-whatsapp
+                data-message="Hola, quisiera consultar por un turno en BEAUTY STYLIST."
+                href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20un%20turno%20en%20BEAUTY%20STYLIST."
+              >
+                <span>Consultá por tu turno</span><span class="button-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="button button-outline" href="#servicios">Descubrí los servicios</a>
+            </div>
+            <div class="hero-notes" aria-label="Acerca de nuestro salón">
+              <span><i aria-hidden="true">✳</i> Para todos los estilos</span>
+              <span><i aria-hidden="true">✳</i> Atención personalizada</span>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-image-frame">
+              <img
+                src="assets/transformacion-keratina-nueva.jpg"
+                alt="Antes y después de un tratamiento de keratina que deja el cabello oscuro más liso y brillante"
+              />
+              <div class="image-caption">
+                <span>CAMBIOS QUE SE SIENTEN</span>
+                <strong>Brillo, movimiento, vos.</strong>
+              </div>
+            </div>
+            <div class="hero-seal" aria-hidden="true">
+              <span>BEAUTY</span>
+              <b>✳</b>
+              <span>WITHOUT<br />LABELS</span>
+            </div>
+            <span class="hero-index" aria-hidden="true">01 — 03</span>
+          </div>
+        </div>
+        <div class="hero-bottom container">
+          <span>UNISEX · CUIDADO · ESTILO</span>
+          <a href="#servicios">Explorá BEAUTY STYLIST <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section class="intro-strip" aria-label="Nuestra filosofía">
+        <div class="container intro-strip-inner">
+          <span class="strip-star" aria-hidden="true">✳</span>
+          <p>Un buen cambio empieza con una buena charla.</p>
+          <span class="strip-label">ESTAMOS PARA ESCUCHARTE</span>
+        </div>
+      </section>
+
+      <section class="section search-section" aria-labelledby="search-title">
+        <div class="container search-panel">
+          <div class="search-copy">
+            <p class="eyebrow">ENCONTRÁ LO QUE BUSCÁS</p>
+            <h2 id="search-title">Buscá tu próximo <em>sí.</em></h2>
+            <p>Explorá servicios y productos en un solo lugar.</p>
+          </div>
+          <div class="search-controls">
+            <div class="search-field">
+              <label class="visually-hidden" for="site-search">Buscar servicios o productos</label>
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input id="site-search" type="search" placeholder="Probá “keratina” o “shampoo”" autocomplete="off" />
+              <button class="clear-search" type="button" aria-label="Borrar búsqueda" hidden>×</button>
+            </div>
+            <div class="filter-group" role="group" aria-label="Filtrar resultados">
+              <button class="filter-button is-active" type="button" data-filter="todo" aria-pressed="true">Todo</button>
+              <button class="filter-button" type="button" data-filter="servicio" aria-pressed="false">Servicios</button>
+              <button class="filter-button" type="button" data-filter="producto" aria-pressed="false">Productos</button>
+            </div>
+            <p class="search-status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services-section" id="servicios">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">LO QUE HACEMOS</p>
+              <h2>Tu próximo <em>favorito.</em></h2>
+            </div>
+            <p class="section-description">
+              Ideas, técnica y productos elegidos para acompañar tu pelo y tu estilo.
+            </p>
+          </div>
+          <div class="service-grid searchable-grid" aria-label="Servicios disponibles">
+            <article class="service-card searchable-item" data-kind="servicio" data-search="corte unisex cabello tijera estilo cambio">
+              <span class="card-number">01</span>
+              <span class="service-icon" aria-hidden="true">✳</span>
+              <h3>Corte unisex</h3>
+              <p>Un corte pensado para vos, tu textura y tu forma de llevarlo.</p>
+              <a
+                class="text-link"
+                data-whatsapp
+                data-message="Hola, quisiera consultar por el servicio Corte unisex."
+                href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20Corte%20unisex."
+              >Consultar servicio <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="service-card searchable-item" data-kind="servicio" data-search="barbería fade degradé barba perfilado masculino">
+              <span class="card-number">02</span>
+              <span class="service-icon" aria-hidden="true">✳</span>
+              <h3>Barbería & barba</h3>
+              <p>Fade, degradé, perfilado y arreglo de barba con precisión.</p>
+              <a
+                class="text-link"
+                data-whatsapp
+                data-message="Hola, quisiera consultar por el servicio Barbería & barba."
+                href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20Barber%C3%ADa%20%26%20barba."
+              >Consultar servicio <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="service-card searchable-item" data-kind="servicio" data-search="color coloración tintura raíz cobertura canas">
+              <span class="card-number">03</span>
+              <span class="service-icon" aria-hidden="true">✳</span>
+              <h3>Color & tintura</h3>
+              <p>Coloración, cobertura y retoques para un tono con personalidad.</p>
+              <a
+                class="text-link"
+                data-whatsapp
+                data-message="Hola, quisiera consultar por el servicio Color & tintura."
+                href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20Color%20%26%20tintura."
+              >Consultar servicio <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="service-card searchable-item" data-kind="servicio" data-search="balayage mechas iluminación reflejos claritos">
+              <span class="card-number">04</span>
+              <span class="service-icon" aria-hidden="true">✳</span>
+              <h3>Mechas & balayage</h3>
+              <p>Iluminación y dimensión que se integran naturalmente a tu look.</p>
+              <a
+                class="text-link"
+                data-whatsapp
+                data-message="Hola, quisiera consultar por el servicio Mechas & balayage."
+                href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20Mechas%20%26%20balayage."
+              >Consultar servicio <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="service-card searchable-item" data-kind="servicio" data-search="alisado suave frizz lacio disciplina">
+              <span class="card-number">05</span>
+              <span class="service-icon" aria-hidden="true">✳</span>
+              <h3>Alisado</h3>
+              <p>Más suavidad y control para que peinarte sea más simple.</p>
+              <a
+                class="text-link"
+                data-whatsapp
+                data-message="Hola, quisiera consultar por el servicio Alisado."
+                href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20Alisado."
+              >Consultar servicio <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="service-card searchable-item" data-kind="servicio" data-search="shock keratina nutrición hidratación tratamiento reparación">
+              <span class="card-number">06</span>
+              <span class="service-icon" aria-hidden="true">✳</span>
+              <h3>Shock de keratina</h3>
+              <p>Un mimo intensivo para nutrir, hidratar y devolverle vida al pelo.</p>
+              <a
+                class="text-link"
+                data-whatsapp
+                data-message="Hola, quisiera consultar por el servicio Shock de keratina."
+                href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20Shock%20de%20keratina."
+              >Consultar servicio <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="service-card searchable-item" data-kind="servicio" data-search="brushing peinado ondas evento fiesta secado">
+              <span class="card-number">07</span>
+              <span class="service-icon" aria-hidden="true">✳</span>
+              <h3>Brushing & peinado</h3>
+              <p>Desde un brushing con movimiento hasta ese peinado especial.</p>
+              <a
+                class="text-link"
+                data-whatsapp
+                data-message="Hola, quisiera consultar por el servicio Brushing & peinado."
+                href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20Brushing%20%26%20peinado."
+              >Consultar servicio <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="service-card searchable-item" data-kind="servicio" data-search="tratamiento capilar cuidado nutrición reparación brillo">
+              <span class="card-number">08</span>
+              <span class="service-icon" aria-hidden="true">✳</span>
+              <h3>Tratamientos capilares</h3>
+              <p>Cuidado a medida para acompañar cada necesidad de tu pelo.</p>
+              <a
+                class="text-link"
+                data-whatsapp
+                data-message="Hola, quisiera consultar por el servicio Tratamientos capilares."
+                href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20Tratamientos%20capilares."
+              >Consultar servicio <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section results-section" id="resultados">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">TRABAJO REAL, CAMBIOS REALES</p>
+              <h2>Hecho con <em>dedicación.</em></h2>
+            </div>
+            <p class="section-description">
+              Cada pelo tiene su historia. Estos son algunos resultados de nuestro espacio.
+            </p>
+          </div>
+          <div class="results-grid">
+            <figure class="result-card result-card-tall">
+              <img src="assets/transformacion-keratina-nueva.jpg" alt="Antes y después de un tratamiento de keratina en cabello oscuro" loading="lazy" />
+              <figcaption><span>KERATINA & SUAVIDAD</span><span>01 / 03</span></figcaption>
+            </figure>
+            <figure class="result-card result-card-offset">
+              <img src="assets/transformacion-cobriza.png" alt="Antes y después de una transformación de color cobrizo" loading="lazy" />
+              <figcaption><span>COLOR COBRIZO</span><span>02 / 03</span></figcaption>
+            </figure>
+            <figure class="result-card result-card-tall">
+              <img src="assets/transformacion-color-borgona.png" alt="Antes y después de una transformación de color rojo borgoña" loading="lazy" />
+              <figcaption><span>COLOR BORGÓÑA</span><span>03 / 03</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section products-section" id="productos">
+        <div class="container">
+          <div class="section-heading products-heading">
+            <div>
+              <p class="eyebrow">RITUALES PARA CASA</p>
+              <h2>Un poco de BEAUTY STYLIST, <em>todos los días.</em></h2>
+            </div>
+            <p class="section-description">
+              Elegimos cada producto para que tu rutina siga sintiéndose como un buen día de salón.
+            </p>
+          </div>
+          <div class="product-grid searchable-grid" aria-label="Productos disponibles">
+            <article class="product-card searchable-item" data-kind="producto" data-search="máscara capilar caviar hidro nutritiva fidelité anti age brillo suavidad">
+              <div class="product-art"><img class="product-photo" src="assets/mascara-caviar-fidelite.jpg" alt="Máscara capilar Caviar hidro-nutritiva Fidelité en tarro violeta" loading="lazy" /></div>
+              <div class="product-info">
+                <div><span class="product-type">FIDELITÉ · LÍNEA CAVIAR</span><h3>Máscara Caviar hidro-nutritiva</h3></div>
+                <p>Nutrición y suavidad para cabellos quebradizos o sin brillo.</p>
+                <a class="button button-small button-outline" data-whatsapp data-message="Hola, quisiera consultar por la máscara capilar Caviar hidro-nutritiva Fidelité." href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20la%20m%C3%A1scara%20capilar%20Caviar%20hidro-nutritiva%20Fidelit%C3%A9.">Consultar este producto <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="product-card searchable-item" data-kind="producto" data-search="máscara capilar argan argán mythical hair mask fidelité cabello dañado decolorado">
+              <div class="product-art"><img class="product-photo" src="assets/mascara-argan-fidelite.jpg" alt="Tarro negro de la máscara capilar Argan Mythical Hair Mask Fidelité" loading="lazy" /></div>
+              <div class="product-info">
+                <div><span class="product-type">FIDELITÉ · MYTHICAL HAIR MASK</span><h3>Máscara Argan Mythical</h3></div>
+                <p>Máscara nutritiva para acompañar el cuidado del cabello dañado.</p>
+                <a class="button button-small button-outline" data-whatsapp data-message="Hola, quisiera consultar por la máscara Argan Mythical Hair Mask Fidelité." href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20la%20m%C3%A1scara%20Argan%20Mythical%20Hair%20Mask%20Fidelit%C3%A9.">Consultar este producto <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="product-card searchable-item" data-kind="producto" data-search="máscara keratin fidelité reparación tratamiento capilar naranja">
+              <div class="product-art"><img class="product-photo" src="assets/mascara-keratin-fidelite.jpg" alt="Máscara capilar Keratin Fidelité línea reparación en tarro naranja" loading="lazy" /></div>
+              <div class="product-info">
+                <div><span class="product-type">FIDELITÉ · LÍNEA REPARACIÓN</span><h3>Máscara Keratin</h3></div>
+                <p>Tratamiento reparador con keratina para el cuidado del cabello.</p>
+                <a class="button button-small button-outline" data-whatsapp data-message="Hola, quisiera consultar por la máscara Keratin Fidelité línea reparación." href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20la%20m%C3%A1scara%20Keratin%20Fidelit%C3%A9%20l%C3%ADnea%20reparaci%C3%B3n.">Consultar este producto <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="product-card searchable-item" data-kind="producto" data-search="shampoo keratin fidelité smooth repair limpieza naranja">
+              <div class="product-art"><img class="product-photo product-photo-shampoo" src="assets/keratin-shampoo-acondicionador-fidelite.jpg" alt="Shampoo Keratin Fidelité Smooth & Repair en botella naranja" loading="lazy" /></div>
+              <div class="product-info">
+                <div><span class="product-type">FIDELITÉ · SMOOTH & REPAIR</span><h3>Shampoo Keratin</h3></div>
+                <p>Limpieza capilar con keratina, de la línea Smooth & Repair.</p>
+                <a class="button button-small button-outline" data-whatsapp data-message="Hola, quisiera consultar por el shampoo Keratin Fidelité." href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20el%20shampoo%20Keratin%20Fidelit%C3%A9.">Consultar este producto <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="product-card searchable-item" data-kind="producto" data-search="acondicionador keratin fidelité smooth repair naranja">
+              <div class="product-art"><img class="product-photo product-photo-conditioner" src="assets/keratin-shampoo-acondicionador-fidelite.jpg" alt="Acondicionador Keratin Fidelité Smooth & Repair en botella naranja" loading="lazy" /></div>
+              <div class="product-info">
+                <div><span class="product-type">FIDELITÉ · SMOOTH & REPAIR</span><h3>Acondicionador Keratin</h3></div>
+                <p>Acondicionador con keratina, ideal para completar la rutina.</p>
+                <a class="button button-small button-outline" data-whatsapp data-message="Hola, quisiera consultar por el acondicionador Keratin Fidelité." href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20el%20acondicionador%20Keratin%20Fidelit%C3%A9.">Consultar este producto <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="product-card searchable-item" data-kind="producto" data-search="máscara coco vainilla fidelité renovación nutrición cabello sin brillo">
+              <div class="product-art"><img class="product-photo" src="assets/mascara-coco-vainilla-fidelite.jpg" alt="Máscara capilar Coco & Vainilla Fidelité en tarro amarillo" loading="lazy" /></div>
+              <div class="product-info">
+                <div><span class="product-type">FIDELITÉ · LÍNEA RENOVACIÓN</span><h3>Máscara Coco & Vainilla</h3></div>
+                <p>Un mimo de nutrición para renovar el brillo del cabello.</p>
+                <a class="button button-small button-outline" data-whatsapp data-message="Hola, quisiera consultar por la máscara Coco & Vainilla Fidelité." href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20la%20m%C3%A1scara%20Coco%20%26%20Vainilla%20Fidelit%C3%A9.">Consultar este producto <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="product-card searchable-item" data-kind="producto" data-search="instant nourishing complex fidelité ampollas complejo nutritivo instantáneo vitaminas">
+              <div class="product-art"><img class="product-photo" src="assets/instant-nourishing-complex-fidelite.jpg" alt="Presentación de ampollas Instant Nourishing Complex Fidelité" loading="lazy" /></div>
+              <div class="product-info">
+                <div><span class="product-type">FIDELITÉ · TRATAMIENTO INTENSIVO</span><h3>Instant Nourishing Complex</h3></div>
+                <p>Complejo nutritivo instantáneo para sumar a tu rutina capilar.</p>
+                <a class="button button-small button-outline" data-whatsapp data-message="Hola, quisiera consultar por el Instant Nourishing Complex Fidelité." href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20el%20Instant%20Nourishing%20Complex%20Fidelit%C3%A9.">Consultar este producto <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="product-card searchable-item" data-kind="producto" data-search="crema acida ácida color master fidelité coloración post químico">
+              <div class="product-art"><img class="product-photo" src="assets/crema-acida-color-master-fidelite.jpg" alt="Crema Ácida Color Master Fidelité en envase rojo" loading="lazy" /></div>
+              <div class="product-info">
+                <div><span class="product-type">FIDELITÉ · COLOR MASTER</span><h3>Crema Ácida Color Master</h3></div>
+                <p>Cuidado capilar para acompañar procesos químicos y coloración.</p>
+                <a class="button button-small button-outline" data-whatsapp data-message="Hola, quisiera consultar por la crema ácida Color Master Fidelité." href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20la%20crema%20%C3%A1cida%20Color%20Master%20Fidelit%C3%A9.">Consultar este producto <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="product-card searchable-item" data-kind="producto" data-search="glorium nov ampollas restaurador capilar creatina biohidratante">
+              <div class="product-art"><img class="product-photo product-photo-glorium" src="assets/glorium-nov-ampollas.jpg" alt="Ampolla Glorium restaurador capilar NOV con creatina" loading="lazy" /></div>
+              <div class="product-info">
+                <div><span class="product-type">NOV · BIOHIDRATANTE CON CREATINA</span><h3>Glorium Restaurador Capilar</h3></div>
+                <p>Ampollas biohidratantes con creatina para el cuidado del cabello.</p>
+                <a class="button button-small button-outline" data-whatsapp data-message="Hola, quisiera consultar por las ampollas Glorium Restaurador Capilar NOV con creatina." href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20las%20ampollas%20Glorium%20Restaurador%20Capilar%20NOV%20con%20creatina.">Consultar este producto <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="product-card searchable-item" data-kind="producto" data-search="máscara almendra acido ácido nov nutrición restauración ph">
+              <div class="product-art"><img class="product-photo" src="assets/mascara-almendra-nov.jpg" alt="Máscara Almendra Ácido NOV para nutrición capilar en tarro blanco" loading="lazy" /></div>
+              <div class="product-info">
+                <div><span class="product-type">NOV · NUTRICIÓN</span><h3>Máscara Almendra Ácido</h3></div>
+                <p>Nutrición capilar y cuidado del pH después de tratamientos químicos.</p>
+                <a class="button button-small button-outline" data-whatsapp data-message="Hola, quisiera consultar por la máscara Almendra Ácido NOV de nutrición." href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20la%20m%C3%A1scara%20Almendra%20%C3%81cido%20NOV%20de%20nutrici%C3%B3n.">Consultar este producto <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="product-card searchable-item" data-kind="producto" data-search="ampollas argan argán bekim tratamiento orgánico cuatro aceites">
+              <div class="product-art"><img class="product-photo" src="assets/ampollas-argan-bekim.jpg" alt="Caja negra Bekim con ampollas de tratamiento de argán" loading="lazy" /></div>
+              <div class="product-info">
+                <div><span class="product-type">BEKIM · COSMÉTICA CAPILAR</span><h3>Ampollas de Argán</h3></div>
+                <p>Tratamiento capilar de argán en ampollas individuales.</p>
+                <a class="button button-small button-outline" data-whatsapp data-message="Hola, quisiera consultar por las ampollas de Argán Bekim." href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20las%20ampollas%20de%20Arg%C3%A1n%20Bekim.">Consultar este producto <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="product-card searchable-item" data-kind="producto" data-search="protector térmico termico caviar fidelité 120 ml calor planchita secador">
+              <div class="product-art"><img class="product-photo" src="assets/protector-termico-caviar-fidelite.jpg" alt="Protector térmico Caviar Fidelité en spray violeta de 120 ml" loading="lazy" /></div>
+              <div class="product-info">
+                <div><span class="product-type">FIDELITÉ · LÍNEA CAVIAR</span><h3>Protector térmico Caviar · 120 ml</h3></div>
+                <p>Protección térmica para acompañar el secado y el peinado.</p>
+                <a class="button button-small button-outline" data-whatsapp data-message="Hola, quisiera consultar por el protector térmico Caviar Fidelité de 120 ml." href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20consultar%20por%20el%20protector%20t%C3%A9rmico%20Caviar%20Fidelit%C3%A9%20de%20120%20ml.">Consultar este producto <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </div>
+          <p class="product-note">¿Buscás algo puntual? Consultanos y te ayudamos a encontrarlo.</p>
+        </div>
+      </section>
+
+      <section class="closing-cta" id="consulta">
+        <div class="container closing-inner">
+          <div>
+            <p class="eyebrow">TU LUGAR, TU MOMENTO</p>
+            <h2>¿Lo charlamos?</h2>
+            <p>Contanos qué tenés en mente. Te ayudamos a encontrar el servicio ideal para vos.</p>
+          </div>
+          <a
+            class="button button-gold closing-button"
+            data-whatsapp
+            data-message="Hola, quisiera hacer una consulta en BEAUTY STYLIST."
+            href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20hacer%20una%20consulta%20en%20BEAUTY%20STYLIST."
+          >Escribinos por WhatsApp <span aria-hidden="true">↗</span></a>
+          <span class="closing-spark" aria-hidden="true">✳</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contacto">
+      <div class="container footer-main">
+        <a class="brand footer-brand" href="#inicio" aria-label="BEAUTY STYLIST, volver al inicio">
+          <img
+            class="brand-logo"
+            src="assets/beauty-stylist-logo-current.jpg"
+            alt="BEAUTY STYLIST — Peluquería y barbería unisex"
+            loading="lazy"
+          />
+        </a>
+        <p class="footer-motto">Tu estilo, a tu manera.<br />Cuidado para todos.</p>
+        <a class="back-top" href="#inicio">VOLVER ARRIBA <span aria-hidden="true">↑</span></a>
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span id="current-year"></span> BEAUTY STYLIST · PELUQUERÍA & BARBERÍA UNISEX</span>
+        <span>HECHO CON CUIDADO <span aria-hidden="true">✳</span></span>
+      </div>
+    </footer>
+    <nav class="floating-social" aria-label="Contacto y redes sociales">
+      <a
+        class="floating-social-link floating-whatsapp"
+        data-whatsapp
+        data-message="Hola, quisiera hacer una consulta en BEAUTY STYLIST."
+        href="https://wa.me/549223620968?text=Hola%2C%20quisiera%20hacer%20una%20consulta%20en%20BEAUTY%20STYLIST."
+        aria-label="Consultar por WhatsApp a BEAUTY STYLIST"
+        title="Consultar por WhatsApp"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4Zm-8.5-7a6.9 6.9 0 0 0-5.9 10.5l.2.4-.8 2.7 2.8-.8.4.2A6.9 6.9 0 1 0 12 4.8Zm3.8 9.9c-.2-.1-1.3-.7-1.5-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a5.7 5.7 0 0 1-1.7-1.1 6.4 6.4 0 0 1-1.2-1.5c-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4c-.2 0-.4.1-.6.3s-.8.8-.8 1.9.8 2.2.9 2.4a8.4 8.4 0 0 0 3.2 3c.4.2.8.4 1.1.5.5.2.9.2 1.3.1.4-.1 1.3-.5 1.4-1 .2-.5.2-.9.1-1-.1-.1-.2-.2-.5-.3Z" />
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+      <a
+        class="floating-social-link floating-instagram"
+        href="https://www.instagram.com/carla.beauty.stylist?utm_source=qr&amp;stkn=MTd0dmx4NWcwMjV5dw=="
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visitar Instagram de BEAUTY STYLIST (abre en una pestaña nueva)"
+        title="Instagram de BEAUTY STYLIST"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle class="instagram-dot" cx="17.5" cy="6.8" r="1" />
+        </svg>
+        <span>Instagram</span>
+      </a>
+      <a
+        class="floating-social-link floating-facebook"
+        href="https://www.facebook.com/Carla.beauty.stylist"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visitar Facebook de BEAUTY STYLIST (abre en una pestaña nueva)"
+        title="Facebook de BEAUTY STYLIST"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v1.8H7v3.1h2.8v8h3.7Z" />
+        </svg>
+        <span>Facebook</span>
+      </a>
+    </nav>
+  </body>
+</html>
