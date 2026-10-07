@@ -32,6 +32,7 @@
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
+      <div class="header-progress" aria-hidden="true"></div>
       <div class="container header-inner">
         <a class="brand" href="#inicio" aria-label="BEAUTY STYLIST, inicio">
           <img
@@ -96,6 +97,8 @@
             <div class="hero-image-frame">
               <img
                 src="assets/transformacion-keratina-nueva.jpg"
+                fetchpriority="high"
+                decoding="async"
                 alt="Antes y después de un tratamiento de keratina que deja el cabello oscuro más liso y brillante"
               />
               <div class="image-caption">
@@ -117,46 +120,19 @@
         </div>
       </section>
 
-      <section class="intro-strip" aria-label="Nuestra filosofía">
+      <section class="intro-strip" aria-label="Nuestra filosofía y accesos rápidos">
         <div class="container intro-strip-inner">
-          <span class="strip-star" aria-hidden="true">✳</span>
-          <p>Un buen cambio empieza con una buena charla.</p>
-          <span class="strip-label">ESTAMOS PARA ESCUCHARTE</span>
-        </div>
-      </section>
-
-      <section class="video-section" aria-labelledby="video-title">
-        <div class="container video-section-inner">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">CONOCÉ NUESTRO ESPACIO</p>
-              <h2 id="video-title">Una mirada a <em>BEAUTY STYLIST.</em></h2>
-            </div>
+          <div class="intro-message">
+            <span class="strip-star" aria-hidden="true">✳</span>
+            <p>Un buen cambio empieza con una buena charla.</p>
+            <span class="strip-label">ESTAMOS PARA ESCUCHARTE</span>
           </div>
-          <figure class="presentation-video">
-            <video
-              id="presentation-video"
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              poster="assets/beauty-stylist-logo-current.jpg"
-              aria-label="Video de presentación de BEAUTY STYLIST, reproducido sin sonido"
-              aria-describedby="video-fallback"
-            >
-              <source src="assets/presentacion-beauty-stylist.mp4" type="video/mp4" />
-              <p>Tu navegador no puede reproducir el video. BEAUTY STYLIST te da la bienvenida a su espacio de peluquería y barbería unisex.</p>
-            </video>
-            <p class="video-fallback" id="video-fallback" hidden>El video no pudo cargarse. BEAUTY STYLIST te da la bienvenida a su espacio de peluquería y barbería unisex.</p>
-            <figcaption>Un espacio para renovar tu look y disfrutar del cuidado personal.</figcaption>
-          </figure>
-          <button
-            class="video-toggle"
-            type="button"
-            aria-label="Reproducir video de presentación"
-            aria-pressed="false"
-            aria-controls="presentation-video"
-          >Reproducir video</button>
+          <nav class="section-rail" aria-label="Accesos rápidos">
+            <a href="#servicios"><span>01</span><strong>Servicios</strong><i aria-hidden="true">↘</i></a>
+            <a href="#resultados"><span>02</span><strong>Transformaciones</strong><i aria-hidden="true">↘</i></a>
+            <a href="#productos"><span>03</span><strong>Productos</strong><i aria-hidden="true">↘</i></a>
+            <a href="#contacto"><span>04</span><strong>Contacto</strong><i aria-hidden="true">↘</i></a>
+          </nav>
         </div>
       </section>
 
@@ -309,19 +285,50 @@
           </div>
           <div class="results-grid">
             <figure class="result-card result-card-tall">
-              <img src="assets/transformacion-keratina-nueva.jpg" alt="Antes y después de un tratamiento de keratina en cabello oscuro" loading="lazy" />
+              <img src="assets/transformacion-keratina-nueva.jpg" alt="Antes y después de un tratamiento de keratina en cabello oscuro" loading="lazy" decoding="async" />
               <figcaption><span>KERATINA & SUAVIDAD</span><span>01 / 04</span></figcaption>
             </figure>
             <figure class="result-card result-card-offset">
-              <img src="assets/transformacion-cobriza.png" alt="Antes y después de una transformación de color cobrizo" loading="lazy" />
+              <img src="assets/transformacion-cobriza.png" alt="Antes y después de una transformación de color cobrizo" loading="lazy" decoding="async" />
               <figcaption><span>COLOR COBRIZO</span><span>02 / 04</span></figcaption>
             </figure>
             <figure class="result-card result-card-tall">
-              <img src="assets/transformacion-color-borgona.png" alt="Antes y después de una transformación de color rojo borgoña" loading="lazy" />
+              <img src="assets/transformacion-color-borgona.png" alt="Antes y después de una transformación de color rojo borgoña" loading="lazy" decoding="async" />
               <figcaption><span>COLOR BORGÓÑA</span><span>03 / 04</span></figcaption>
             </figure>
+            <figure class="result-card result-card-video" data-video-card>
+              <div class="result-video-wrap">
+                <video
+                  id="presentation-video"
+                  class="result-video"
+                  muted
+                  playsinline
+                  preload="metadata"
+                  poster="assets/beauty-stylist-logo-current.jpg"
+                  aria-label="Video de presentación de BEAUTY STYLIST, reproducido sin sonido"
+                >
+                  <source src="assets/presentacion-beauty-stylist.mp4" type="video/mp4" />
+                  Tu navegador no puede reproducir el video de presentación.
+                </video>
+                <img
+                  class="result-video-logo"
+                  src="assets/beauty-stylist-logo-current.jpg"
+                  alt="Logotipo de BEAUTY STYLIST"
+                  hidden
+                />
+                <button
+                  class="result-video-toggle"
+                  id="video-toggle"
+                  type="button"
+                  aria-label="Reproducir video de presentación"
+                  aria-pressed="false"
+                >Reproducir</button>
+                <span class="result-video-tag">BEAUTY STYLIST · PRESENTACIÓN</span>
+              </div>
+              <figcaption><span>CONOCÉ NUESTRO ESPACIO</span><span>VIDEO</span></figcaption>
+            </figure>
             <figure class="result-card result-card-claritos">
-              <img src="assets/trabajo-claritos.jpg" alt="Trabajo de claritos: cabello castaño con reflejos claros" loading="lazy" />
+              <img src="assets/trabajo-claritos.jpg" alt="Trabajo de claritos: cabello castaño con reflejos claros" loading="lazy" decoding="async" />
               <figcaption><span>CLARITOS</span><span>04 / 04</span></figcaption>
             </figure>
           </div>
@@ -341,7 +348,7 @@
           </div>
           <div class="product-grid searchable-grid" aria-label="Productos disponibles">
             <article class="product-card searchable-item" data-kind="producto" data-search="máscara capilar caviar hidro nutritiva fidelité anti age brillo suavidad">
-              <div class="product-art"><img class="product-photo" src="assets/mascara-caviar-fidelite.jpg" alt="Máscara capilar Caviar hidro-nutritiva Fidelité en tarro violeta" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo" src="assets/mascara-caviar-fidelite.jpg" alt="Máscara capilar Caviar hidro-nutritiva Fidelité en tarro violeta" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">FIDELITÉ · LÍNEA CAVIAR</span><h3>Máscara Caviar hidro-nutritiva</h3></div>
                 <p>Nutrición y suavidad para cabellos quebradizos o sin brillo.</p>
@@ -349,7 +356,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="máscara capilar argan argán mythical hair mask fidelité cabello dañado decolorado">
-              <div class="product-art"><img class="product-photo" src="assets/mascara-argan-fidelite.jpg" alt="Tarro negro de la máscara capilar Argan Mythical Hair Mask Fidelité" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo" src="assets/mascara-argan-fidelite.jpg" alt="Tarro negro de la máscara capilar Argan Mythical Hair Mask Fidelité" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">FIDELITÉ · MYTHICAL HAIR MASK</span><h3>Máscara Argan Mythical</h3></div>
                 <p>Máscara nutritiva para acompañar el cuidado del cabello dañado.</p>
@@ -357,7 +364,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="máscara keratin fidelité reparación tratamiento capilar naranja">
-              <div class="product-art"><img class="product-photo" src="assets/mascara-keratin-fidelite.jpg" alt="Máscara capilar Keratin Fidelité línea reparación en tarro naranja" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo" src="assets/mascara-keratin-fidelite.jpg" alt="Máscara capilar Keratin Fidelité línea reparación en tarro naranja" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">FIDELITÉ · LÍNEA REPARACIÓN</span><h3>Máscara Keratin</h3></div>
                 <p>Tratamiento reparador con keratina para el cuidado del cabello.</p>
@@ -365,7 +372,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="shampoo keratin fidelité smooth repair limpieza naranja">
-              <div class="product-art"><img class="product-photo product-photo-shampoo" src="assets/keratin-shampoo-acondicionador-fidelite.jpg" alt="Shampoo Keratin Fidelité Smooth & Repair en botella naranja" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo product-photo-shampoo" src="assets/keratin-shampoo-acondicionador-fidelite.jpg" alt="Shampoo Keratin Fidelité Smooth & Repair en botella naranja" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">FIDELITÉ · SMOOTH & REPAIR</span><h3>Shampoo Keratin</h3></div>
                 <p>Limpieza capilar con keratina, de la línea Smooth & Repair.</p>
@@ -373,7 +380,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="acondicionador keratin fidelité smooth repair naranja">
-              <div class="product-art"><img class="product-photo product-photo-conditioner" src="assets/keratin-shampoo-acondicionador-fidelite.jpg" alt="Acondicionador Keratin Fidelité Smooth & Repair en botella naranja" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo product-photo-conditioner" src="assets/keratin-shampoo-acondicionador-fidelite.jpg" alt="Acondicionador Keratin Fidelité Smooth & Repair en botella naranja" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">FIDELITÉ · SMOOTH & REPAIR</span><h3>Acondicionador Keratin</h3></div>
                 <p>Acondicionador con keratina, ideal para completar la rutina.</p>
@@ -381,7 +388,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="máscara coco vainilla fidelité renovación nutrición cabello sin brillo">
-              <div class="product-art"><img class="product-photo" src="assets/mascara-coco-vainilla-fidelite.jpg" alt="Máscara capilar Coco & Vainilla Fidelité en tarro amarillo" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo" src="assets/mascara-coco-vainilla-fidelite.jpg" alt="Máscara capilar Coco & Vainilla Fidelité en tarro amarillo" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">FIDELITÉ · LÍNEA RENOVACIÓN</span><h3>Máscara Coco & Vainilla</h3></div>
                 <p>Un mimo de nutrición para renovar el brillo del cabello.</p>
@@ -389,7 +396,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="instant nourishing complex fidelité ampollas complejo nutritivo instantáneo vitaminas">
-              <div class="product-art"><img class="product-photo" src="assets/instant-nourishing-complex-fidelite.jpg" alt="Presentación de ampollas Instant Nourishing Complex Fidelité" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo" src="assets/instant-nourishing-complex-fidelite.jpg" alt="Presentación de ampollas Instant Nourishing Complex Fidelité" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">FIDELITÉ · TRATAMIENTO INTENSIVO</span><h3>Instant Nourishing Complex</h3></div>
                 <p>Complejo nutritivo instantáneo para sumar a tu rutina capilar.</p>
@@ -397,7 +404,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="crema acida ácida color master fidelité coloración post químico">
-              <div class="product-art"><img class="product-photo" src="assets/crema-acida-color-master-fidelite.jpg" alt="Crema Ácida Color Master Fidelité en envase rojo" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo" src="assets/crema-acida-color-master-fidelite.jpg" alt="Crema Ácida Color Master Fidelité en envase rojo" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">FIDELITÉ · COLOR MASTER</span><h3>Crema Ácida Color Master</h3></div>
                 <p>Cuidado capilar para acompañar procesos químicos y coloración.</p>
@@ -405,7 +412,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="glorium nov ampollas restaurador capilar creatina biohidratante">
-              <div class="product-art"><img class="product-photo product-photo-glorium" src="assets/glorium-nov-ampollas.jpg" alt="Ampolla Glorium restaurador capilar NOV con creatina" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo product-photo-glorium" src="assets/glorium-nov-ampollas.jpg" alt="Ampolla Glorium restaurador capilar NOV con creatina" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">NOV · BIOHIDRATANTE CON CREATINA</span><h3>Glorium Restaurador Capilar</h3></div>
                 <p>Ampollas biohidratantes con creatina para el cuidado del cabello.</p>
@@ -413,7 +420,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="máscara almendra acido ácido nov nutrición restauración ph">
-              <div class="product-art"><img class="product-photo" src="assets/mascara-almendra-nov.jpg" alt="Máscara Almendra Ácido NOV para nutrición capilar en tarro blanco" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo" src="assets/mascara-almendra-nov.jpg" alt="Máscara Almendra Ácido NOV para nutrición capilar en tarro blanco" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">NOV · NUTRICIÓN</span><h3>Máscara Almendra Ácido</h3></div>
                 <p>Nutrición capilar y cuidado del pH después de tratamientos químicos.</p>
@@ -421,7 +428,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="ampollas argan argán bekim tratamiento orgánico cuatro aceites">
-              <div class="product-art"><img class="product-photo" src="assets/ampollas-argan-bekim.jpg" alt="Caja negra Bekim con ampollas de tratamiento de argán" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo" src="assets/ampollas-argan-bekim.jpg" alt="Caja negra Bekim con ampollas de tratamiento de argán" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">BEKIM · COSMÉTICA CAPILAR</span><h3>Ampollas de Argán</h3></div>
                 <p>Tratamiento capilar de argán en ampollas individuales.</p>
@@ -429,7 +436,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="protector térmico termico caviar fidelité 120 ml calor planchita secador">
-              <div class="product-art"><img class="product-photo" src="assets/protector-termico-caviar-fidelite.jpg" alt="Protector térmico Caviar Fidelité en spray violeta de 120 ml" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo" src="assets/protector-termico-caviar-fidelite.jpg" alt="Protector térmico Caviar Fidelité en spray violeta de 120 ml" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">FIDELITÉ · LÍNEA CAVIAR</span><h3>Protector térmico Caviar · 120 ml</h3></div>
                 <p>Protección térmica para acompañar el secado y el peinado.</p>
@@ -437,7 +444,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="reparador de puntas serum split ends fidelité stylemakers semillas de lino 30 ml">
-              <div class="product-art"><img class="product-photo" src="assets/split-ends-serum-fidelite.jpg" alt="Split Ends Serum Fidelité reparador de puntas con semillas de lino, 30 ml" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo" src="assets/split-ends-serum-fidelite.jpg" alt="Split Ends Serum Fidelité reparador de puntas con semillas de lino, 30 ml" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">FIDELITÉ · STYLEMAKERS</span><h3>Split Ends Serum · 30 ml</h3></div>
                 <p>Serum con semillas de lino para cuidar y reparar las puntas.</p>
@@ -445,7 +452,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="magic serum nov reparador de puntas 50 ml">
-              <div class="product-art"><img class="product-photo" src="assets/magic-serum-nov.jpg" alt="Magic Serum NOV reparador de puntas, 50 ml" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo" src="assets/magic-serum-nov.jpg" alt="Magic Serum NOV reparador de puntas, 50 ml" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">NOV · CORTI NATO</span><h3>Magic Serum reparador · 50 ml</h3></div>
                 <p>Serum NOV para ayudar a reparar y proteger las puntas.</p>
@@ -453,7 +460,7 @@
               </div>
             </article>
             <article class="product-card searchable-item" data-kind="producto" data-search="mythical elixir oil argan fidelité 120 ml aceite multifunción">
-              <div class="product-art"><img class="product-photo" src="assets/mythical-elixir-oil-fidelite.jpg" alt="Mythical Elixir Oil de Argán Fidelité, tratamiento multifunción de 120 ml" loading="lazy" /></div>
+              <div class="product-art"><img class="product-photo" src="assets/mythical-elixir-oil-fidelite.jpg" alt="Mythical Elixir Oil de Argán Fidelité, tratamiento multifunción de 120 ml" loading="lazy" decoding="async" /></div>
               <div class="product-info">
                 <div><span class="product-type">FIDELITÉ · ARGAN</span><h3>Mythical Elixir Oil · 120 ml</h3></div>
                 <p>Aceite de argán multifunción para acompañar el cuidado capilar.</p>
@@ -560,5 +567,35 @@
         <span>Facebook</span>
       </a>
     </nav>
+
+    <button class="side-search-trigger" id="side-search-trigger" type="button" aria-label="Abrir buscador" aria-expanded="false">Buscar</button>
+    <div class="search-scrim" id="search-scrim" aria-hidden="true"></div>
+    <aside class="side-search" id="side-search" aria-label="Buscador lateral" aria-hidden="true">
+      <div class="side-search-head">
+        <div>
+          <p class="eyebrow">BÚSQUEDA RÁPIDA</p>
+          <h2>Encontrá tu <em>sí.</em></h2>
+          <p>Buscá servicios o productos sin recorrer toda la página.</p>
+        </div>
+        <button class="side-search-close" id="side-search-close" type="button" aria-label="Cerrar buscador">×</button>
+      </div>
+      <label class="visually-hidden" for="side-search-input">Buscar servicios o productos</label>
+      <div class="side-search-field">
+        <span aria-hidden="true">⌕</span>
+        <input id="side-search-input" type="search" placeholder="Keratina, color, shampoo…" autocomplete="off" />
+      </div>
+      <div class="filter-group" role="group" aria-label="Filtrar resultados desde el buscador lateral">
+        <button class="filter-button side-filter is-active" type="button" data-filter="todo" aria-pressed="true">Todo</button>
+        <button class="filter-button side-filter" type="button" data-filter="servicio" aria-pressed="false">Servicios</button>
+        <button class="filter-button side-filter" type="button" data-filter="producto" aria-pressed="false">Productos</button>
+      </div>
+      <p class="side-search-status" id="side-search-status" aria-live="polite">Explorá servicios y productos.</p>
+      <nav class="side-search-links" aria-label="Accesos directos">
+        <a href="#servicios"><span>Servicios</span><span aria-hidden="true">↘</span></a>
+        <a href="#resultados"><span>Transformaciones</span><span aria-hidden="true">↘</span></a>
+        <a href="#productos"><span>Productos</span><span aria-hidden="true">↘</span></a>
+        <a href="#contacto"><span>Contacto</span><span aria-hidden="true">↘</span></a>
+      </nav>
+    </aside>
   </body>
 </html>
