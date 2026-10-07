@@ -3238,3 +3238,500 @@ body {
     text-overflow: ellipsis;
   }
 }
+
+/* ================================================================
+   BEAUTY STYLIST — RESPONSIVE FINAL PASS
+   Objetivo: que la misma experiencia se vea limpia en PC, tablet
+   y teléfonos, sin cambiar contenido, servicios, productos ni fotos.
+
+   La regla principal para móvil es evitar grids estrechos y alturas
+   forzadas: cada bloque recupera su ancho natural y las imágenes
+   conservan proporción sin deformarse.
+   ================================================================ */
+
+/* Evita desbordes horizontales causados por elementos flotantes. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* El contenedor nunca puede provocar scroll horizontal en pantallas chicas. */
+@media (max-width: 840px) {
+  .container {
+    width: min(100% - 32px, 760px);
+  }
+
+  .header-inner {
+    min-height: 74px;
+    gap: 16px;
+  }
+
+  .brand-logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  /* Tablet/phone: menú compacto para no comprimir los enlaces. */
+  .menu-toggle {
+    display: flex;
+    flex: 0 0 auto;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 16px 16px;
+    border-top: 1px solid rgba(169,120,93,.14);
+    background: rgba(250,244,241,.985);
+    box-shadow: 0 22px 50px rgba(80,55,47,.13);
+    transform: translateY(-12px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+  }
+
+  .main-nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .main-nav > a {
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 4px;
+    color: #4d3a34;
+    border-bottom: 1px solid rgba(93,63,55,.08);
+  }
+
+  .main-nav .nav-cta {
+    justify-content: center;
+    margin-top: 10px;
+    border: 1px solid rgba(143,63,94,.22);
+    border-radius: 12px;
+    background: rgba(215,166,165,.08);
+  }
+
+  .hero-layout {
+    min-height: 0;
+    grid-template-columns: minmax(0,1fr);
+    gap: 28px;
+  }
+
+  .hero-copy {
+    padding-bottom: 0;
+  }
+
+  .hero-visual {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .hero-image-frame {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+  }
+
+  .hero-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .service-grid,
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Galería: la hacemos explícita para que el vídeo no herede
+     alturas de las fotos de transformaciones. */
+  .results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 12px;
+  }
+
+  .result-card {
+    min-width: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .result-card > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* La primera foto es originalmente vertical; mantiene su identidad
+     sin deformación y queda visualmente controlada en el grid. */
+  .result-card-tall > img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .result-card-video .result-video-wrap {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 9 / 16;
+  }
+
+  .result-card-video .result-video,
+  .result-card-video .result-video-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .result-card figcaption {
+    min-height: 42px;
+    padding: 10px 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+  }
+
+  .header-inner {
+    min-height: 68px;
+  }
+
+  .brand-logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hero {
+    padding-top: 20px;
+  }
+
+  .hero-layout {
+    gap: 22px;
+  }
+
+  h1 {
+    max-width: 100%;
+    font-size: clamp(42px, 13vw, 58px);
+    line-height: .96;
+  }
+
+  .hero-intro {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    min-height: 46px;
+    justify-content: center;
+  }
+
+  .hero-image-frame {
+    aspect-ratio: 4 / 5;
+    border-radius: 20px;
+  }
+
+  .hero-seal {
+    right: 8px;
+    bottom: 28px;
+    width: 64px;
+    height: 64px;
+    font-size: 8px;
+  }
+
+  .intro-strip-inner {
+    padding-block: 10px;
+  }
+
+  .intro-message {
+    gap: 9px;
+  }
+
+  .section-rail {
+    max-width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .section-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .section-rail a {
+    min-width: 122px;
+    flex: 0 0 122px;
+  }
+
+  .search-panel {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .search-controls {
+    min-width: 0;
+  }
+
+  .filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .filter-button {
+    min-height: 38px;
+    padding-inline: 11px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* En teléfonos la galería pasa a una sola columna: evita la
+     composición entrecortada y las alturas forzadas del 2-col. */
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .result-card,
+  .result-card-tall,
+  .result-card-offset,
+  .result-card-video,
+  .result-card-claritos {
+    grid-column: 1 !important;
+    width: 100% !important;
+  }
+
+  .result-card > img,
+  .result-card-tall > img,
+  .result-card-offset > img,
+  .result-card-claritos > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .result-card-tall > img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .result-card-video .result-video-wrap {
+    width: min(100%, 300px);
+    margin-inline: auto;
+    aspect-ratio: 9 / 16;
+  }
+
+  .result-card-video .result-video,
+  .result-card-video .result-video-logo {
+    object-fit: cover;
+  }
+
+  .result-video-tag {
+    left: 10px;
+    right: 10px;
+  }
+
+  .result-video-toggle {
+    min-height: 40px;
+    padding-inline: 14px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .product-card {
+    display: grid;
+    grid-template-columns: minmax(118px, .42fr) minmax(0, .58fr);
+    align-items: stretch;
+  }
+
+  .product-art {
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .product-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .product-info {
+    min-height: 0;
+    padding: 15px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .product-info h3 {
+    font-size: clamp(16px, 5vw, 20px);
+    line-height: 1.08;
+  }
+
+  .product-info p {
+    font-size: 10px;
+    line-height: 1.55;
+  }
+
+  .button-small {
+    min-height: 38px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .closing-inner {
+    gap: 20px;
+  }
+
+  .closing-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-block: 28px;
+  }
+
+  .footer-motto {
+    justify-self: start;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-block: 14px;
+    gap: 9px;
+  }
+
+  /* Controles flotantes seguros para dedos: un único dock inferior. */
+  .floating-share-button {
+    left: 12px;
+    right: auto;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    width: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    border-radius: 13px;
+  }
+
+  .floating-social {
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    gap: 6px;
+    padding: 5px;
+    border-radius: 16px;
+  }
+
+  .floating-social-link {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .location-notice {
+    left: 12px;
+    right: 12px;
+    bottom: calc(max(12px, env(safe-area-inset-bottom)) + 60px);
+    width: auto;
+    min-width: 0;
+  }
+
+  .side-search-trigger {
+    right: 12px;
+    bottom: calc(max(12px, env(safe-area-inset-bottom)) + 120px);
+    width: 40px;
+    height: 40px;
+  }
+
+  .side-search {
+    width: min(88vw, 360px);
+    padding: 76px 15px 18px;
+  }
+
+  .site-footer {
+    padding-bottom: 130px;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .floating-social-link {
+    width: 37px;
+    min-width: 37px;
+    height: 37px;
+    min-height: 37px;
+  }
+
+  .floating-share-button {
+    width: 39px;
+    min-width: 39px;
+    min-height: 39px;
+  }
+
+  .product-card {
+    grid-template-columns: minmax(102px, .4fr) minmax(0, .6fr);
+  }
+
+  .product-info {
+    padding: 12px 11px;
+  }
+
+  .product-info h3 {
+    font-size: 15px;
+  }
+
+  .product-info p {
+    font-size: 9px;
+  }
+}
