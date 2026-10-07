@@ -3735,3 +3735,133 @@ body {
     font-size: 9px;
   }
 }
+
+/* ================================================================
+   BEAUTY STYLIST — CORRECCIÓN MÓVIL PRODUCTOS + FACEBOOK
+   Mantiene el diseño aprobado. Solo corrige renderizado móvil y
+   garantiza que las 3 redes queden visibles dentro del dock.
+   ================================================================ */
+
+@media (max-width: 700px) {
+  /* El catálogo móvil usa dos columnas estables y sin solapamientos.
+     La imagen deja de ser absoluta para que nunca invada el texto. */
+  .product-card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 39%) minmax(0, 61%) !important;
+    align-items: stretch;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .product-art {
+    position: relative;
+    min-width: 0;
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    align-self: stretch;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+  }
+
+  .product-photo,
+  .product-photo-glorium {
+    position: static !important;
+    inset: auto !important;
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 8px;
+    object-fit: contain !important;
+    object-position: center;
+  }
+
+  .product-info {
+    min-width: 0;
+    width: auto;
+    overflow: hidden;
+    padding: 14px 13px;
+    gap: 8px;
+  }
+
+  .product-info > div,
+  .product-info p,
+  .product-info h3 {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .product-info h3 {
+    overflow-wrap: anywhere;
+    word-break: normal;
+    font-size: clamp(15px, 4.3vw, 19px);
+    line-height: 1.1;
+  }
+
+  .product-info p {
+    overflow-wrap: anywhere;
+    font-size: 10px;
+    line-height: 1.45;
+  }
+
+  .button-small {
+    width: 100% !important;
+    min-width: 0;
+    white-space: normal;
+    min-height: 38px;
+  }
+
+  /* El dock siempre reserva espacio para WhatsApp + Instagram + Facebook. */
+  .floating-social {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    max-width: calc(100vw - 86px);
+    min-width: 0;
+    overflow: visible !important;
+  }
+
+  .floating-social-link {
+    flex: 0 0 auto !important;
+  }
+
+  .floating-facebook {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .product-card {
+    grid-template-columns: minmax(104px, 39%) minmax(0, 61%) !important;
+  }
+
+  .product-info {
+    padding: 12px 10px;
+  }
+
+  .product-info h3 {
+    font-size: 15px;
+  }
+
+  .product-info p {
+    font-size: 9px;
+  }
+
+  .floating-social {
+    gap: 4px;
+    padding: 5px;
+  }
+
+  .floating-social-link {
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+  }
+}
